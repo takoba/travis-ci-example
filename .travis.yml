@@ -9,5 +9,8 @@ before_script:
     - echo 'y' | pecl install memcache > ~/memcache.log || ( echo "=== MEMCACHE BUILD FAILED ==="; cat ~/memcache.log )
     - if [ $TRAVIS_PHP_VERSION \< 5.4 ]; then echo "extension=memcache.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`; fi
 
+# PHPUnit
+script: phpunit --colors --coverage-text
+
 # http://about.travis-ci.org/docs/user/languages/php/
 # http://about.travis-ci.org/docs/user/ci-environment/
