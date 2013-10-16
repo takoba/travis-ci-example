@@ -1,6 +1,6 @@
 language: php
 
-# PHPバージョン指定
+# add PHP versions
 php:
     - 5.3
 
